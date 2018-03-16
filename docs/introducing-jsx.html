@@ -20,9 +20,10 @@
             }
 
             const element = (
-                <h1>
-                    Hello, {formatName(user)}!
-                </h1>
+                <div>
+                    <h1>Hello!</h1>
+                    <h2>Good to see you here.</h2>
+                </div>
             );
 
             function getGreeting(user) {
@@ -33,7 +34,7 @@
             }
 
             ReactDOM.render(
-                getGreeting(),
+                element,
                 document.getElementById('root')
             );
         </script>
