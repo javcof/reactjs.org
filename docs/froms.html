@@ -11,10 +11,12 @@
 
         <script type="text/babel">
 
-            class NameForm extends React.Component {
+            class EssayForm extends React.Component {
                 constructor(props) {
                     super(props);
-                    this.state = {value: ''};
+                    this.state = {
+                        value: 'Please write an essay about your favorite DOM element.'
+                    };
 
                     this.handleChange = this.handleChange.bind(this);
                     this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,7 +27,7 @@
                 }
 
                 handleSubmit(event) {
-                    alert('A nme was submitted: ' + this.state.value);
+                    alert('An essay was submitted: ' + this.state.value);
                     event.preventDefault();
                 }
 
@@ -33,8 +35,8 @@
                     return (
                         <form onSubmit={this.handleSubmit}>
                             <label>
-                                Name:
-                                <input type="text"
+                                Essay:
+                                <textarea
                                     value={this.state.value}
                                     onChange={this.handleChange}
                                 />
@@ -46,7 +48,7 @@
             }
 
             ReactDOM.render(
-                <NameForm />,
+                <EssayForm />,
                 document.getElementById('root')
             );
 
